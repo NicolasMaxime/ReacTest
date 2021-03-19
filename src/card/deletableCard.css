@@ -1,0 +1,17 @@
+.cardGlobal{
+    width: 16em;
+    height: 13em;
+    margin: 1em;
+}
+
+.cardHeader{
+    font-size: 1.2em;
+}
+
+.cardBody{
+    overflow-y: auto;
+}
+
+.cardFooter{
+    margin-left: auto;
+}
