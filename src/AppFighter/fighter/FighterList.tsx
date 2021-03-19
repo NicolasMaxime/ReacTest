@@ -14,12 +14,15 @@ const FighterList = ({
         let index = clone.findIndex(x => x.id === id)
         clone.splice(index, 1);
         setFighters(clone);
+        axios.delete<void>('http://localhost:3000/'+id)
+            .then(response => {})
+            .catch(e => {console.log('Impossible to delete element '+id+' : '+e)})
         return undefined;
     }
 
     React.useEffect(() => {
         setFighters(fightersArr);
-        axios.get('http://localhost:3000/fighter')
+        axios.get<FighterInterface[]>('http://localhost:3000/fighter')
             .then((response => setFighters(response.data)))
             .catch(e => {console.log('GetAll failed : '+e)});
         }
