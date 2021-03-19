@@ -12,6 +12,6 @@
     overflow-y: auto;
 }
 
-.cardFooter{
-    margin-left: auto;
+.cardFooterButton{
+    margin-left: 60%;
 }

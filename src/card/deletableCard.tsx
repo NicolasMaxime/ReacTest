@@ -1,7 +1,7 @@
 import {Button, Card} from "react-bootstrap";
 import './deletableCard.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {TrashFill} from "react-bootstrap-icons";
+import {PencilFill, TrashFill} from "react-bootstrap-icons";
 
 const DeletableCard = (
     {
@@ -10,6 +10,7 @@ const DeletableCard = (
         subtitle = 'default subtitle',
         text =  'default biooooooooooooooooooooooooooooooography',
         removeCard = (arg: any) => { },
+        editCard = () => {}
     }) => {
 
     return <div>
@@ -23,9 +24,14 @@ const DeletableCard = (
                 <Card.Text>{text}</Card.Text>
             </Card.Body>
             <Card.Footer className={'cardFooter'}>
-                <Button variant='' onClick={() => removeCard(id)}>
-                    <TrashFill ></TrashFill>
-                </Button>
+                <div className={'cardFooterButton'}>
+                    <Button variant='' onClick={() => {editCard()}}>
+                        <PencilFill ></PencilFill>
+                    </Button>
+                    <Button variant='' onClick={() => removeCard(id)}>
+                        <TrashFill ></TrashFill>
+                    </Button>
+                </div>
             </Card.Footer>
         </Card>
     </div>
