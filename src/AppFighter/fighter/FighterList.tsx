@@ -10,7 +10,6 @@ const FighterList = ({
     const [fighters, setFighters] = React.useState(fightersArr)
 
     function removeFighter(id: string){
-        console.log(id)
         let clone = [...fighters];
         let index = clone.findIndex(x => x.id === id)
         clone.splice(index, 1);
@@ -20,7 +19,9 @@ const FighterList = ({
 
     React.useEffect(() => {
         setFighters(fightersArr);
-        axios.get('http://localhost:3000/fighter').then((response => setFighters(response.data)));
+        axios.get('http://localhost:3000/fighter')
+            .then((response => setFighters(response.data)))
+            .catch(e => {console.log('GetAll failed : '+e)});
         }
         , [setFighters]);
 
