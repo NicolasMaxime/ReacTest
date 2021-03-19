@@ -36,7 +36,7 @@ const FighterList = ({
                     id = {_.id}
                     title={_.type}
                     subtitle={`${_.firstname} ${_.name}`}
-                    biography= {_.biography}
+                    text= {_.biography}
                     removeCard={removeFighter}
                 />
             )}
